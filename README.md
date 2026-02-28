@@ -6,16 +6,16 @@ A structured, 10-module Python course covering Object-Oriented Programming from 
 
 | Module | Topic | Level |
 |--------|-------|-------|
-| 01 | [Classes and Instances](01-classes_and_instances/) | Beginner |
-| 02 | [The `__init__` Constructor](02-init_constructor/) | Beginner |
-| 03 | [Class and Instance Variables](03-class_and_instance_variables/) | Beginner–Intermediate |
-| 04 | [Methods: Instance, Class, Static](04-methods_instance_class_static/) | Intermediate |
-| 05 | [Encapsulation](05-encapsulation/) | Intermediate |
-| 06 | [Inheritance](06-inheritance/) | Intermediate |
-| 07 | [Polymorphism](07-polymorphism/) | Intermediate–Advanced |
-| 08 | [Magic / Dunder Methods](08-magic_dunder_methods/) | Advanced |
-| 09 | [Decorators and Property](09-decorators_and_property/) | Advanced |
-| 10 | [Abstract Classes and Design Patterns](10-abstract_classes_and_design_patterns/) | Very Advanced |
+| 01 | [Classes and Instances](Object%20Oriented%20Programming/01-classes_and_instances/) | Beginner |
+| 02 | [The `__init__` Constructor](Object%20Oriented%20Programming/02-init_constructor/) | Beginner |
+| 03 | [Class and Instance Variables](Object%20Oriented%20Programming/03-class_and_instance_variables/) | Beginner–Intermediate |
+| 04 | [Methods: Instance, Class, Static](Object%20Oriented%20Programming/04-methods_instance_class_static/) | Intermediate |
+| 05 | [Encapsulation](Object%20Oriented%20Programming/05-encapsulation/) | Intermediate |
+| 06 | [Inheritance](Object%20Oriented%20Programming/06-inheritance/) | Intermediate |
+| 07 | [Polymorphism](Object%20Oriented%20Programming/07-polymorphism/) | Intermediate–Advanced |
+| 08 | [Magic / Dunder Methods](Object%20Oriented%20Programming/08-magic_dunder_methods/) | Advanced |
+| 09 | [Decorators and Property](Object%20Oriented%20Programming/09-decorators_and_property/) | Advanced |
+| 10 | [Abstract Classes and Design Patterns](Object%20Oriented%20Programming/10-abstract_classes_and_design_patterns/) | Very Advanced |
 
 Each module folder contains **three files**:
 
@@ -43,13 +43,13 @@ Each module folder contains **three files**:
 2. **Run any tutorial or practice file directly**
 
    ```bash
-   python 01-classes_and_instances/01a-classes_and_instances.py
+   python "Object Oriented Programming/01-classes_and_instances/01a-classes_and_instances.py"
    ```
 
    Or use Python 3 explicitly if needed:
 
    ```bash
-   python3 01-classes_and_instances/01a-classes_and_instances.py
+   python3 "Object Oriented Programming/01-classes_and_instances/01a-classes_and_instances.py"
    ```
 
 3. **Work through the modules in order** — each module builds on the concepts introduced in previous ones.
