@@ -27,7 +27,7 @@
 # =============================================================================
 
 # ---- Example 1: The Problem Without Encapsulation ----
-
+print("\nExample 1") 
 class BankAccountUnsafe:
     def __init__(self, owner, balance):
         self.owner = owner
@@ -39,7 +39,7 @@ print(f"Balance: {acc.balance}")  # -500 - This shouldn't be allowed!
 
 
 # ---- Example 2: Public, Protected, and Private ----
-
+print("\nExample 2") 
 class Employee:
     def __init__(self, name, salary, ssn):
         self.name = name            # Public - anyone can access
@@ -69,7 +69,7 @@ print(f"\nNamespace: {e.__dict__}")
 
 
 # ---- Example 3: Proper Encapsulation with Getters and Setters ----
-
+print("\nExample 3") 
 class BankAccount:
     def __init__(self, owner, balance=0):
         self.__owner = owner
@@ -111,7 +111,7 @@ acc.deposit(-100)      # Blocked!
 
 
 # ---- Example 4: Why Encapsulation Matters ----
-
+print("\nExample 4") 
 class Temperature:
     def __init__(self, celsius):
         self.__celsius = None     # Initialise first

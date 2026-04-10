@@ -1,6 +1,23 @@
-# Foundational Course: Python Object-Oriented Programming (OOP)
+# SPARK Academy Tutorials
 
-A structured, 10-module Python course covering Object-Oriented Programming from beginner to advanced level. Each module contains tutorials, exercises, and practical questions with expected outputs — ideal for self-paced learning or classroom instruction.
+Tutorial materials for the [SPARK Academy](https://event.fourwaves.com/spark/pages) (**Sprint AI Training for African Medical Imaging Knowledge Translation**) — a program training the next generation of African AI experts in medical imaging.
+
+## Tutorials
+
+### 1. Python Object-Oriented Programming (OOP)
+
+A structured, 10-module Python course covering OOP from beginner to advanced level. Each module contains tutorials, exercises, and practical questions with expected outputs.
+
+### 2. Brain Tumor Segmentation with U-Net
+
+Hands-on brain tumor segmentation using U-Net (TensorFlow/Keras) on the [LGG MRI dataset](https://www.kaggle.com/datasets/mateuszbuda/lgg-mri-segmentation), with a survey of state-of-the-art models (nnU-Net, Swin UNETR, MedSAM, TransBTS, Attention U-Net). Designed to run on **Kaggle** with GPU.
+
+| Notebook | Description |
+|----------|-------------|
+| [`SPARK_BrainTumorSeg2026.ipynb`](Brain%20Tumor%20Segmentation/SPARK_BrainTumorSeg2026.ipynb) | Full tutorial with detailed explanations |
+| [`SPARK_BrainTumorSeg2026_withquiz.ipynb`](Brain%20Tumor%20Segmentation/SPARK_BrainTumorSeg2026_withquiz.ipynb) | Condensed version with quizzes for classroom use |
+
+---
 
 ## Course Structure
 

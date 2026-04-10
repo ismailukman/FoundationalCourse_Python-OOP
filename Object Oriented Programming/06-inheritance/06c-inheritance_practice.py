@@ -28,6 +28,8 @@
 
 
 
+
+
 # ---- Question 2: E-Commerce Products ----
 # Create a hierarchy:
 #   - Product: name, price, weight_kg

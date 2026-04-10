@@ -41,6 +41,7 @@ class Circle(Shape):
     def describe(self):
         return f"Circle with radius {self.radius}"
 
+
 class Rectangle(Shape):
     def __init__(self, width, height):
         self.width = width
@@ -51,6 +52,7 @@ class Rectangle(Shape):
 
     def describe(self):
         return f"Rectangle {self.width}x{self.height}"
+
 
 class Triangle(Shape):
     def __init__(self, base, height):
@@ -71,169 +73,170 @@ for shape in shapes:
     print(f"{shape.describe()} -> Area: {shape.area():.2f}")
 
 
-# ---- Example 2: Duck Typing ----
-# Python doesn't require inheritance to use polymorphism!
-# Any object with the right methods works.
 
-class Dog:
-    def speak(self):
-        return "Woof!"
+# # ---- Example 2: Duck Typing ----
+# # Python doesn't require inheritance to use polymorphism!
+# # Any object with the right methods works.
 
-class Cat:
-    def speak(self):
-        return "Meow!"
+# class Dog:
+#     def speak(self):
+#         return "Woof!"
 
-class Robot:
-    def speak(self):
-        return "Beep boop!"
+# class Cat:
+#     def speak(self):
+#         return "Meow!"
 
-# These classes have NO common parent, but they all have speak()
-def make_it_speak(thing):
-    """Works with ANY object that has a speak() method."""
-    print(thing.speak())
+# class Robot:
+#     def speak(self):
+#         return "Beep boop!"
 
-print("\n--- Duck Typing ---")
-make_it_speak(Dog())      # Woof!
-make_it_speak(Cat())      # Meow!
-make_it_speak(Robot())    # Beep boop!
-# Python doesn't care about the TYPE, only that it HAS the method!
+# # These classes have NO common parent, but they all have speak()
+# def make_it_speak(thing):
+#     """Works with ANY object that has a speak() method."""
+#     print(thing.speak())
 
-
-# ---- Example 3: Polymorphism with Built-in Functions ----
-# Python's built-in functions use polymorphism extensively
-
-print("\n--- Built-in Polymorphism ---")
-# len() works on strings, lists, dicts, tuples - different types, same function
-print(len("Hello"))       # 5 (string)
-print(len([1, 2, 3]))    # 3 (list)
-print(len({"a": 1}))     # 1 (dict)
-
-# + operator works differently for different types
-print(3 + 4)              # 7 (integer addition)
-print("Hello" + " World") # Hello World (string concatenation)
-print([1, 2] + [3, 4])   # [1, 2, 3, 4] (list concatenation)
-
-# iter() works on any iterable
-for char in "Hi":
-    print(char, end=" ")
-print()
+# print("\n--- Duck Typing ---")
+# make_it_speak(Dog())      # Woof!
+# make_it_speak(Cat())      # Meow!
+# make_it_speak(Robot())    # Beep boop!
+# # Python doesn't care about the TYPE, only that it HAS the method!
 
 
-# ---- Example 4: Polymorphism with Common Interface ----
-# Design classes that share a common interface for interchangeable use
+# # ---- Example 3: Polymorphism with Built-in Functions ----
+# # Python's built-in functions use polymorphism extensively
 
-class PaymentMethod:
-    def pay(self, amount):
-        raise NotImplementedError("Subclasses must implement pay()")
+# print("\n--- Built-in Polymorphism ---")
+# # len() works on strings, lists, dicts, tuples - different types, same function
+# print(len("Hello"))       # 5 (string)
+# print(len([1, 2, 3]))    # 3 (list)
+# print(len({"a": 1}))     # 1 (dict)
 
-    def refund(self, amount):
-        raise NotImplementedError("Subclasses must implement refund()")
+# # + operator works differently for different types
+# print(3 + 4)              # 7 (integer addition)
+# print("Hello" + " World") # Hello World (string concatenation)
+# print([1, 2] + [3, 4])   # [1, 2, 3, 4] (list concatenation)
 
-class CreditCard(PaymentMethod):
-    def __init__(self, card_number):
-        self.card_number = card_number
-
-    def pay(self, amount):
-        return f"Paid ${amount:.2f} with Credit Card ending in {self.card_number[-4:]}"
-
-    def refund(self, amount):
-        return f"Refunded ${amount:.2f} to Credit Card ending in {self.card_number[-4:]}"
-
-class PayPal(PaymentMethod):
-    def __init__(self, email):
-        self.email = email
-
-    def pay(self, amount):
-        return f"Paid ${amount:.2f} via PayPal ({self.email})"
-
-    def refund(self, amount):
-        return f"Refunded ${amount:.2f} to PayPal ({self.email})"
-
-class Bitcoin(PaymentMethod):
-    def __init__(self, wallet_address):
-        self.wallet = wallet_address
-
-    def pay(self, amount):
-        return f"Paid ${amount:.2f} in Bitcoin to wallet {self.wallet[:8]}..."
-
-    def refund(self, amount):
-        return f"Refunded ${amount:.2f} in Bitcoin to wallet {self.wallet[:8]}..."
-
-# Process ANY payment method the same way - polymorphism!
-def process_payment(method, amount):
-    print(method.pay(amount))
-
-print("\n--- Payment Processing ---")
-methods = [
-    CreditCard("4532123456789012"),
-    PayPal("user@email.com"),
-    Bitcoin("1A2b3C4d5E6f7G8h")
-]
-
-for method in methods:
-    process_payment(method, 99.99)
+# # iter() works on any iterable
+# for char in "Hi":
+#     print(char, end=" ")
+# print()
 
 
-# ---- Example 5: Polymorphism with Operator Overloading ----
+# # ---- Example 4: Polymorphism with Common Interface ----
+# # Design classes that share a common interface for interchangeable use
 
-class Vector:
-    def __init__(self, x, y):
-        self.x = x
-        self.y = y
+# class PaymentMethod:
+#     def pay(self, amount):
+#         raise NotImplementedError("Subclasses must implement pay()")
 
-    def __add__(self, other):
-        return Vector(self.x + other.x, self.y + other.y)
+#     def refund(self, amount):
+#         raise NotImplementedError("Subclasses must implement refund()")
 
-    def __mul__(self, scalar):
-        return Vector(self.x * scalar, self.y * scalar)
+# class CreditCard(PaymentMethod):
+#     def __init__(self, card_number):
+#         self.card_number = card_number
 
-    def __eq__(self, other):
-        return self.x == other.x and self.y == other.y
+#     def pay(self, amount):
+#         return f"Paid ${amount:.2f} with Credit Card ending in {self.card_number[-4:]}"
 
-    def __repr__(self):
-        return f"Vector({self.x}, {self.y})"
+#     def refund(self, amount):
+#         return f"Refunded ${amount:.2f} to Credit Card ending in {self.card_number[-4:]}"
 
-print("\n--- Operator Overloading ---")
-v1 = Vector(2, 3)
-v2 = Vector(4, 1)
+# class PayPal(PaymentMethod):
+#     def __init__(self, email):
+#         self.email = email
 
-print(f"v1 = {v1}")
-print(f"v2 = {v2}")
-print(f"v1 + v2 = {v1 + v2}")      # Uses __add__
-print(f"v1 * 3 = {v1 * 3}")        # Uses __mul__
-print(f"v1 == v2? {v1 == v2}")      # Uses __eq__
-print(f"v1 == Vector(2,3)? {v1 == Vector(2, 3)}")  # True
+#     def pay(self, amount):
+#         return f"Paid ${amount:.2f} via PayPal ({self.email})"
+
+#     def refund(self, amount):
+#         return f"Refunded ${amount:.2f} to PayPal ({self.email})"
+
+# class Bitcoin(PaymentMethod):
+#     def __init__(self, wallet_address):
+#         self.wallet = wallet_address
+
+#     def pay(self, amount):
+#         return f"Paid ${amount:.2f} in Bitcoin to wallet {self.wallet[:8]}..."
+
+#     def refund(self, amount):
+#         return f"Refunded ${amount:.2f} in Bitcoin to wallet {self.wallet[:8]}..."
+
+# # Process ANY payment method the same way - polymorphism!
+# def process_payment(method, amount):
+#     print(method.pay(amount))
+
+# print("\n--- Payment Processing ---")
+# methods = [
+#     CreditCard("4532123456789012"),
+#     PayPal("user@email.com"),
+#     Bitcoin("1A2b3C4d5E6f7G8h")
+# ]
+
+# for method in methods:
+#     process_payment(method, 99.99)
 
 
-# ---- Example 6: Polymorphic Iteration ----
+# # ---- Example 5: Polymorphism with Operator Overloading ----
 
-class FileReader:
-    def read(self):
-        return "Reading from file..."
+# class Vector:
+#     def __init__(self, x, y):
+#         self.x = x
+#         self.y = y
 
-class DatabaseReader:
-    def read(self):
-        return "Reading from database..."
+#     def __add__(self, other):
+#         return Vector(self.x + other.x, self.y + other.y)
 
-class APIReader:
-    def read(self):
-        return "Reading from API..."
+#     def __mul__(self, scalar):
+#         return Vector(self.x * scalar, self.y * scalar)
 
-# All readers used interchangeably
-def load_data(readers):
-    for reader in readers:
-        print(reader.read())
+#     def __eq__(self, other):
+#         return self.x == other.x and self.y == other.y
 
-print("\n--- Polymorphic Data Loading ---")
-readers = [FileReader(), DatabaseReader(), APIReader()]
-load_data(readers)
+#     def __repr__(self):
+#         return f"Vector({self.x}, {self.y})"
+
+# print("\n--- Operator Overloading ---")
+# v1 = Vector(2, 3)
+# v2 = Vector(4, 1)
+
+# print(f"v1 = {v1}")
+# print(f"v2 = {v2}")
+# print(f"v1 + v2 = {v1 + v2}")      # Uses __add__
+# print(f"v1 * 3 = {v1 * 3}")        # Uses __mul__
+# print(f"v1 == v2? {v1 == v2}")      # Uses __eq__
+# print(f"v1 == Vector(2,3)? {v1 == Vector(2, 3)}")  # True
 
 
-# KEY TAKEAWAYS:
-# - Polymorphism = same interface, different implementations
-# - Method overriding: child classes redefine parent methods
-# - Duck typing: Python cares about BEHAVIOUR, not TYPE
-# - Built-in functions (len, +, iter) are polymorphic by design
-# - Operator overloading: define how operators work with your classes
-# - Design classes with COMMON INTERFACES for maximum flexibility
-# - "Program to an interface, not an implementation"
+# # ---- Example 6: Polymorphic Iteration ----
+
+# class FileReader:
+#     def read(self):
+#         return "Reading from file..."
+
+# class DatabaseReader:
+#     def read(self):
+#         return "Reading from database..."
+
+# class APIReader:
+#     def read(self):
+#         return "Reading from API..."
+
+# # All readers used interchangeably
+# def load_data(readers):
+#     for reader in readers:
+#         print(reader.read())
+
+# print("\n--- Polymorphic Data Loading ---")
+# readers = [FileReader(), DatabaseReader(), APIReader()]
+# load_data(readers)
+
+
+# # KEY TAKEAWAYS:
+# # - Polymorphism = same interface, different implementations
+# # - Method overriding: child classes redefine parent methods
+# # - Duck typing: Python cares about BEHAVIOUR, not TYPE
+# # - Built-in functions (len, +, iter) are polymorphic by design
+# # - Operator overloading: define how operators work with your classes
+# # - Design classes with COMMON INTERFACES for maximum flexibility
+# # - "Program to an interface, not an implementation"

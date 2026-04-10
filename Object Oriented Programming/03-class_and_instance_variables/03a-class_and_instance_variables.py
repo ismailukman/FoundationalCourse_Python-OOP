@@ -17,7 +17,7 @@
 # =============================================================================
 
 # ---- Example 1: Instance Variables (Unique Per Object) ----
-
+print("\nExample 1") 
 class Dog:
     def __init__(self, name, breed):
         self.name = name      # Instance variable - unique per dog
@@ -32,7 +32,7 @@ print(d2.name, d2.breed)   # Max Poodle
 
 
 # ---- Example 2: Class Variables (Shared Across All Objects) ----
-
+print("\nExample 2") 
 class Employee:
     # Class variables - shared by ALL instances
     company = "TechCorp"
@@ -64,7 +64,7 @@ print(e2.info())
 
 # ---- Example 3: How the Lookup Chain Works ----
 # When you access an attribute, Python looks: instance -> class -> parent class
-
+print("\nExample 3") 
 print("\n--- Namespace Exploration ---")
 print(f"e1.__dict__: {e1.__dict__}")           # Only instance vars
 print(f"Employee.__dict__ (partial):")
@@ -77,7 +77,7 @@ print(f"Employee.company = {Employee.company}") # Found in class (same thing)
 
 
 # ---- Example 4: Overriding Class Variables on an Instance ----
-
+print("\nExample 4") 
 print("\n--- Override Demo ---")
 print(f"Before override:")
 print(f"  e1.raise_amount = {e1.raise_amount}")    # 1.04 (from class)
@@ -97,7 +97,7 @@ print(f"  e2.__dict__: {e2.__dict__}")     # Does NOT contain raise_amount
 
 
 # ---- Example 5: Class Variable as Counter ----
-
+print("\nExample 5") 
 class Vehicle:
     total_vehicles = 0
     all_vehicles = []

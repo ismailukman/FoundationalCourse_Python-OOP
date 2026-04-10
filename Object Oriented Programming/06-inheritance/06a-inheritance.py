@@ -51,6 +51,8 @@ print(d.speak())        # Buddy makes a sound
 print(c.speak())        # Whiskers makes a sound
 
 
+print("\n---")
+
 # ---- Example 2: Overriding Methods ----
 # Child classes can OVERRIDE parent methods to provide specific behaviour
 
@@ -79,6 +81,7 @@ for animal in animals:
     print(animal.speak())    # Each calls its OWN version of speak()
 
 
+print("\n---")
 # ---- Example 3: Extending the Parent with super() ----
 # super() lets you call the PARENT class's methods from the child
 
@@ -133,6 +136,7 @@ mgr.add_employee(dev2)
 mgr.show_team()
 
 
+print("\n---")
 # ---- Example 4: isinstance() and issubclass() ----
 
 print("\n--- Type Checking ---")
@@ -187,6 +191,7 @@ print(f"\nMRO for ElectricCar:")
 for cls in ElectricCar.__mro__:
     print(f"  {cls.__name__}")
 
+print("\n---")
 
 # ---- Example 6: Using Parent Methods Alongside Overridden Ones ----
 

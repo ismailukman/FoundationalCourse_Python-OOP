@@ -44,7 +44,7 @@ print(f"{p.name}, age {p.age}")
 # When you write Person("Alice", 30), Python internally does:
 #   Person.__init__(new_object, "Alice", 30)
 # So 'self' = the new_object being created
-
+print("\nExample 2") 
 class Demonstrator:
     def __init__(self, value):
         print(f"__init__ called! self is: {self}")
@@ -57,7 +57,7 @@ print(f"The object d is: {d}")    # Same memory address as 'self' above!
 
 # ---- Example 3: Default Parameter Values ----
 # You can give parameters default values so they're optional
-
+print("\nExample 3") 
 class Employee:
     def __init__(self, name, department="General", salary=50000):
         self.name = name
@@ -82,7 +82,7 @@ print(e3.info())   # Mike | Dept: General | Salary: $70,000
 
 # ---- Example 4: Computed/Derived Attributes ----
 # You can create attributes that are calculated from other attributes
-
+print("\nExample 4") 
 class EmailUser:
     def __init__(self, first_name, last_name, domain="company.com"):
         self.first_name = first_name
@@ -99,7 +99,7 @@ print(f"Email: {user.email}")
 
 # ---- Example 5: Validation in __init__ ----
 # You can add logic to validate data when creating an instance
-
+print("\nExample 5") 
 class Age:
     def __init__(self, years):
         if years < 0:

@@ -42,7 +42,7 @@ print(dog1 == dog2)  # False - they are two different objects
 
 # ---- Example 2: Adding Attributes to Instances Manually ----
 # You can attach data to instances after creation (but this is not ideal)
-
+print("\n") 
 dog1.name = "Buddy"
 dog1.breed = "Golden Retriever"
 dog1.age = 3
@@ -57,7 +57,7 @@ print(f"{dog2.name} is a {dog2.breed}, age {dog2.age}")
 
 # ---- Example 3: A Better Approach - Using __init__ ----
 # The __init__ method automatically sets attributes when an instance is created
-
+print("\n") 
 class Cat:
     def __init__(self, name, colour, age):
         self.name = name       # 'self' refers to the instance being created
@@ -74,7 +74,7 @@ print(f"{cat2.name} is {cat2.colour} and {cat2.age} years old")
 
 # ---- Example 4: Adding Methods (Functions Inside a Class) ----
 # Methods define what an object can DO
-
+print("\n") 
 class Student:
     def __init__(self, name, grade):
         self.name = name
@@ -87,25 +87,25 @@ class Student:
         return self.grade >= 12
 
 # Create student instances
-s1 = Student("Alice", 12)
+s1 = Student("Lukman", 12)
 s2 = Student("Bob", 10)
 
-print(s1.introduce())               # Hi, I'm Alice and I'm in grade 12.
+print(s1.introduce())               # Hi, I'm Lukman and I'm in grade 12.
 print(s2.introduce())               # Hi, I'm Bob and I'm in grade 10.
 print(f"{s1.name} graduating? {s1.is_graduating()}")  # True
 print(f"{s2.name} graduating? {s2.is_graduating()}")  # False
 
 
-# ---- Example 5: The 'self' Parameter Explained ----
-# 'self' is automatically passed when you call a method on an instance
-# These two calls are equivalent:
+# # ---- Example 5: The 'self' Parameter Explained ----
+# # 'self' is automatically passed when you call a method on an instance
+# # These two calls are equivalent:
 
-print(s1.introduce())               # Python passes s1 as 'self' automatically
-print(Student.introduce(s1))        # Explicitly passing s1 as 'self'
+# print(s1.introduce())               # Python passes s1 as 'self' automatically
+# print(Student.introduce(s1))        # Explicitly passing s1 as 'self'
 
-# KEY TAKEAWAYS:
-# - A class is a template/blueprint for creating objects
-# - An instance is a specific object created from a class
-# - __init__ sets up initial attributes when an instance is created
-# - 'self' refers to the current instance
-# - Methods are functions defined inside a class
+# # KEY TAKEAWAYS:
+# # - A class is a template/blueprint for creating objects
+# # - An instance is a specific object created from a class
+# # - __init__ sets up initial attributes when an instance is created
+# # - 'self' refers to the current instance
+# # - Methods are functions defined inside a class

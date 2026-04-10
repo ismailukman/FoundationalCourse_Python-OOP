@@ -20,7 +20,7 @@
 
 # ---- Example 1: Instance Methods (the default) ----
 # Instance methods can access and modify instance AND class data via self
-
+print("\nExample 1") 
 class Employee:
     raise_amount = 1.04
 
@@ -46,7 +46,7 @@ print(f"New pay: ${e.pay:,}")  # New pay: $72,800
 # ---- Example 2: Class Methods (@classmethod) ----
 # Class methods receive the CLASS as the first argument, not the instance.
 # They can modify class-level data that applies to all instances.
-
+print("\nExample 2") 
 class Employee2:
     raise_amount = 1.04
     num_employees = 0
@@ -80,7 +80,7 @@ print(f"Total employees: {Employee2.get_employee_count()}")  # 2
 
 # ---- Example 3: Class Methods as Alternative Constructors ----
 # A very common pattern: creating instances from different data formats
-
+print("\nExample 3") 
 class Employee3:
     def __init__(self, first, last, pay):
         self.first = first
@@ -118,7 +118,7 @@ print(f"From dict: {e3}")
 # ---- Example 4: Static Methods (@staticmethod) ----
 # Static methods don't receive 'self' or 'cls'. They're utility functions
 # that logically belong to the class but don't need instance/class data.
-
+print("\nExample 4") 
 class DateUtils:
     @staticmethod
     def is_workday(day):
@@ -141,7 +141,7 @@ print(f"Days in 2025: {DateUtils.days_between(date1, date2)}")
 
 
 # ---- Example 5: When to Use Which? ----
-
+print("\nExample 5") 
 class MathHelper:
     precision = 2  # Class variable
 
