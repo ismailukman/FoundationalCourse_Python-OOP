@@ -14,7 +14,8 @@ Hands-on brain tumor segmentation using U-Net (TensorFlow/Keras) on the [LGG MRI
 
 | Notebook | Description |
 |----------|-------------|
-| [`SPARK_BrainTumorSeg2026.ipynb`](Brain%20Tumor%20Segmentation/SPARK_BrainTumorSeg2026.ipynb) | Full tutorial with detailed explanations |
+| [`SPARK_BrainTumorSeg2026.ipynb`](Brain%20Tumor%20Segmentation/SPARK_BrainTumorSeg2026.ipynb) | Full tutorial — TensorFlow/Keras |
+| [`SPARK_BrainTumorSeg2026_PyTorch.ipynb`](Brain%20Tumor%20Segmentation/SPARK_BrainTumorSeg2026_PyTorch.ipynb) | Full tutorial — PyTorch |
 | [`SPARK_BrainTumorSeg2026_withquiz.ipynb`](Brain%20Tumor%20Segmentation/SPARK_BrainTumorSeg2026_withquiz.ipynb) | Condensed version with quizzes for classroom use |
 
 ---
